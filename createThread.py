@@ -47,6 +47,6 @@ def editThread(originalText,liveScores):
 		else:
 			text = text + '|*{0}*'.format(liveScores[i+2].split()[0])
 
-	text = text + '\n\n ^^Last ^^Updated ^^' + time.strftime('%H') + ":" + time.strftime('%M') + ' ^^GMT || ^^Created ^^By ^^/u/stats94'
+	text = text + '\n\n ^^Last ^^Updated ^^' + time.strftime('%H') + ":" + time.strftime('%M') + ' ^^GMT ^^|| ^^Created ^^By ^^/u/stats94'
 						
 	return text

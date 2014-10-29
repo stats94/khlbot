@@ -1,7 +1,6 @@
 import praw
 import time
 import createThread
-import datetime
 from khlv2 import checkCorrectDate, getTodaysScores
 
 if __name__=="__main__":

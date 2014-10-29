@@ -56,8 +56,8 @@ def getTimes(matches):
 
 		hour = int(hourString)
 
-		GMTHour = hour - 4
-		ESTHour = hour - 8
+		GMTHour = hour - 3
+		ESTHour = hour - 7
 
 		GMTString = "{0}:{1}".format(GMTHour,minutesString)
 		ESTString = "{0}:{1}".format(ESTHour,minutesString)
@@ -97,18 +97,17 @@ def checkCorrectDate():
 		return False
 
 def getTodaysScores():
-	scores = []
-
-
 	http = urllib3.PoolManager()
 
 	try:
 		filehandle = http.urlopen('GET','http://en.khl.ru/calendar/')
 	except:
 		print("Failed to get today's scores")
-		return scores	
+		return []	
 
 	soup = BeautifulSoup(filehandle.data)
+
+	scores = []
 
 	for match in soup.find_all('li',attrs={"title":"today"}):
 		for score in match.find_all('td','num'):
