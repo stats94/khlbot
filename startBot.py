@@ -17,7 +17,7 @@ if __name__=="__main__":
 		except:
 			print("Failed to get submissions")
 
-		if submissions[0].title != createThread.threadTitle() and checkCorrectDate:
+		if checkCorrectDate and (submissions[0].title != createThread.threadTitle()):
 			threadText = createThread.threadText()
 
 			if threadText != "":

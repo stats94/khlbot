@@ -82,7 +82,7 @@ def getDate():
 			date = header.next_sibling.next_sibling.next_sibling
 			break
 
-	return date
+	return date.text
 
 def checkCorrectDate():
 	day = time.strftime("%d")
@@ -91,7 +91,7 @@ def checkCorrectDate():
 	if day[0] == '0':
 		day = day[1]
 
-	if day in date.text:
+	if day in date:
 		return True
 	else:
 		return False
